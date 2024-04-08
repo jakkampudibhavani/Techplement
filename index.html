@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-compatible" content="IE==edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Landing Page</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+  </head>
+  <body>
+    <div class="header">
+      <a class="logo"><img src="logo.png" /> </a>
+      <div class="header-right" id="header-right">
+        <a class="active">Home</a>
+        <a>About</a>
+        <a>Products</a>
+        <a>Contact</a>
+      </div>
+      <div class="menu" id="menu">
+        <span class="material-symbols-outlined" style="overflow: hidden">
+          menu
+        </span>
+      </div>
+    </div>
+    <div class="body">
+      <div class="body-section1">
+        <h3>Samsung S24 Ultra</h3>
+        <div class="slider">
+          <div class="slides">
+            <img src="img/S24 ultra(1).webp" alt="Image 1" class="slideimg" />
+            <img src="img/s24(2).jpg" alt="Image 2" class="slideimg" />
+            <img src="img/s24(3).jpg" alt="Image 3" class="slideimg" />
+            <img src="img/s24(4).jpg" alt="Image 4" class="slideimg" />
+            <img src="img/s24(5).jpg" alt="Image 5" class="slideimg" />
+          </div>
+        </div>
+        <div class="offer">
+          <h4>15% Off</h4>
+          <h2 style="color: black">
+            Price: <strike>1,90,000 </strike> 1,39,999
+          </h2>
+        </div>
+      </div>
+
+      <div class="body-section2">
+        <h2>Details:</h2>
+        <table>
+          <tr>
+            <th>Brand</th>
+            <th>Samsung</th>
+          </tr>
+
+          <tr>
+            <th>Model Name</th>
+            <th>Samsung Galaxy S24 Ultra 5G</th>
+          </tr>
+
+          <tr>
+            <th>Network Service Provider</th>
+            <th>Unlocked for All Carriers</th>
+          </tr>
+
+          <tr>
+            <th>Operating System</th>
+            <th>Android 14.0</th>
+          </tr>
+
+          <tr>
+            <th>Cellular Technology</th>
+            <th>5G</th>
+          </tr>
+        </table>
+      </div>
+
+      <div class="body-section3">
+        <h2>About This Item:</h2>
+        <p>
+          Meet Galaxy S24 Ultra, the ultimate form of Galaxy Ultra with a new
+          titanium exterior and a 17.25cm (6.8") flat display. It's an absolute
+          marvel of design. The legacy of Galaxy Note is alive and well. Write,
+          tap and navigate with precision your fingers wish they had on the new,
+          flat display.<br />With the most megapixels on a smartphone and AI
+          processing, Galaxy S24 Ultra sets the industry standard for image
+          quality every time you hit the shutter. What's more, the new ProVisual
+          engine recognizes objects — improving colour tone, reducing noise and
+          bringing out detail.
+        </p>
+      </div>
+      <div class="images">
+        <img src="img/S24 ultra(1).webp" alt="Image 1" />
+        <img src="img/s24(2).jpg" alt="Image 2" />
+        <img src="img/s24(3).jpg" alt="Image 3" />
+        <img src="img/s24(4).jpg" alt="Image 4" />
+        <img src="img/s24(5).jpg" alt="Image 5" />
+      </div>
+    </div>
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="footer-col">
+            <h4>Company</h4>
+            <ul>
+              <li>
+                <a href="#">About Us</a>
+                <a href="#">Our Services</a>
+                <a href="#">Privacy Policy</a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Get Help</h4>
+            <ul>
+              <li>
+                <a href="#">FAQ</a>
+                <a href="#">Shipping</a>
+                <a href="#">Returns</a>
+                <a href="#">Order Status</a>
+                <a href="#">Payment Options</a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Products</h4>
+            <ul>
+              <li>
+                <a href="#">Samsung Galaxy V</a>
+                <a href="#">Galaxy Z Fold2</a>
+                <a href="#">Galaxy S22</a>
+                <a href="#">Galaxy M20</a>
+                <a href="#">Galaxy M52</a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Customer Care</h4>
+            <ul>
+              <li>
+                <a href="#">Email : Samsungstore@gmail.com</a>
+                <a href="#">TollFree : 1234567899</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="copyright">Copyright 2024 || All rights are reserved</div>
+    </footer>
+  </body>
+</html>
+<script>
+  const slides = document.getElementsByClassName("slideimg");
+  let current = 0;
+  function reset() {
+    for (let i = 0; i < 5; i++) {
+      slides[i].style.display = "none";
+    }
+  }
+  function startSlide() {
+    reset();
+    slides[0].style.display = "block";
+  }
+  function slide() {
+    reset();
+    if (current == 4) {
+      current = -1;
+    }
+    slides[current + 1].style.display = "block";
+    current++;
+  }
+
+  startSlide();
+
+  setInterval(() => {
+    slide();
+  }, 2000);
+  let menu = "close";
+  document.getElementById("menu").addEventListener("click", () => {
+    if (menu === "close") {
+      document.getElementById("header-right").style.height = "160px";
+      menu = "open";
+    } else {
+      document.getElementById("header-right").style.height = "0px";
+      menu = "close";
+    }
+  });
+</script>
